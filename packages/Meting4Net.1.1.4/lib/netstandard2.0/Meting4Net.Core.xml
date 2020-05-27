@@ -1,0 +1,609 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Meting4Net.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Meting4Net.Core.Common.IsPropertyExist(System.Object,System.String)">
+            <summary>
+            指定对象是否存在指定属性,适用于JObject,JArray,dynamic
+            </summary>
+            <param name="data"></param>
+            <param name="propertyname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.Ip2Long(System.String)">
+            <summary>
+            IP地址转换为数字
+            </summary>
+            <param name="ip">ip地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.Long2Ip(System.String)">
+            <summary>
+            数字转换为IP地址
+            </summary>
+            <param name="ipNum">数字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.EncodeBase64(System.String,System.String)">
+            编码
+        </member>
+        <member name="M:Meting4Net.Core.Common.EncodeBase64(System.Byte[])">
+            编码
+        </member>
+        <member name="M:Meting4Net.Core.Common.DecodeBase64(System.String,System.String)">
+            解码
+        </member>
+        <member name="M:Meting4Net.Core.Common.MD5Encrypt16(System.String)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.MD5Encrypt16(System.String,System.Boolean)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="str"></param>
+            <param name="flag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.MD5Encrypt32(System.String)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.MD5Encrypt64(System.String)">
+            <summary>
+            64位MD5加密
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.GetTimeStamp">
+            <summary>
+            返回 当前 Unix 时间戳（秒）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.GetTimeStampMicro">
+            <summary>
+            返回 当前 Unix 时间戳（毫秒）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.String2Unicode(System.String)">
+            <summary>
+            字符串转Unicode
+            </summary>
+            <param name="source">源字符串</param>
+            <returns>Unicode编码后的字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.Unicode2String(System.String)">
+            <summary>
+            Unicode转字符串
+            </summary>
+            <param name="source">经过Unicode编码的字符串</param>
+            <returns>正常字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Common.GetRandomString(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            生成随机字符串 
+            </summary>
+            <param name="length">目标字符串的长度</param>
+            <param name="useNum">是否包含数字，1=包含，默认为包含</param>
+            <param name="useLow">是否包含小写字母，1=包含，默认为包含</param>
+            <param name="useUpp">是否包含大写字母，1=包含，默认为包含</param>
+            <param name="useSpe">是否包含特殊字符，1=包含，默认为不包含</param>
+            <param name="custom">要包含的自定义字符，直接输入要包含的字符列表</param>
+            <returns>指定长度的随机字符串</returns>
+        </member>
+        <member name="T:Meting4Net.Core.Encrypt">
+            <summary>
+            加密类
+            eg.网易云音乐数据加密
+            </summary>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.EncryptedRequest(System.String)">
+            <summary>
+            对明文数据进行加密(网易云API加密)
+            </summary>
+            <param name="text">明文数据</param>
+            <returns>加密后的数据</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.CreateSecretKey(System.Int32)">
+            <summary>
+            生成随机SecKey
+            </summary>
+            <param name="size">key长度</param>
+            <returns>SecKey</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.AesEncrypt(System.String,System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="data">数据</param>
+            <param name="secKey">私钥</param>
+            <param name="iv">iv</param>
+            <returns>加密后的数据</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.RsaEncrypt(System.String,System.String,System.String)">
+            <summary>
+            生成EncSecKey
+            </summary>
+            <param name="text">第一个数据</param>
+            <param name="pubKey">第二个数据</param>
+            <param name="modulus">第三个数据</param>
+            <returns>EncSecKey</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.ReverseText(System.String)">
+            <summary>
+            反转字符串
+            </summary>
+            <param name="str">字符串</param>
+            <returns>反转后的字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Encrypt.ZeroFill(System.String,System.Int32)">
+            <summary>
+            使用前导0填充字符串
+            </summary>
+            <param name="str">字符串</param>
+            <param name="size">要填充到的长度</param>
+            <returns>处理后的字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.HttpAide.HttpGet(System.String,System.Text.StringBuilder,System.String[],System.Net.WebProxy)">
+            <summary>
+            HTTP Get请求
+            </summary>
+            <param name="url">请求目标URL</param>
+            <param name="isPost"></param>
+            <param name="referer"></param>
+            <param name="cookies"></param>
+            <param name="ua"></param>
+            <returns>返回请求回复字符串</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Meting4Net.Core.HttpAide.IsSimpleParms(System.Object)" -->
+        <member name="T:Meting4Net.Core.ServerProvider">
+            <summary>
+            音乐API 服务提供者
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.ServerProvider.Netease">
+            <summary>
+            网易云音乐
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.ServerProvider.Tencent">
+            <summary>
+            腾讯QQ音乐
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.ServerProvider.Kugou">
+            <summary>
+            酷狗音乐
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.ServerProvider.Xiami">
+            <summary>
+            虾米音乐
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.ServerProvider.Baidu">
+            <summary>
+            百度(千千)音乐
+            </summary>
+        </member>
+        <member name="T:Meting4Net.Core.Meting">
+            <summary>
+            音乐API
+            </summary>
+        </member>
+        <member name="F:Meting4Net.Core.Meting.VERSION">
+            <summary>
+            当前版本
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Raw">
+            <summary>
+            获取的原始json数据
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Data">
+            <summary>
+            如果格式化则为格式化后json,未格式化则同 Raw
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Br">
+            <summary>
+            歌曲 比特率
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Server">
+            <summary>
+            音乐API 服务提供者
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Proxy">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Format">
+            <summary>
+            是否格式化, 默认 false
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.Header">
+            <summary>
+            请求头
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Meting.TryCount">
+            <summary>
+            HTTP请求尝试次数，默认 3（当未查询到数据时，或查询出错时，尝试再次查询的次数）
+            </summary>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.#ctor(Meting4Net.Core.ServerProvider)">
+            <summary>
+            初始化音乐API 服务提供者
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Site(Meting4Net.Core.ServerProvider)">
+            <summary>
+            设置音乐API 服务提供者 (初始化Server, Header)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Cookie(System.String)">
+            <summary>
+            自定义Cookie
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.FormatMethod(System.Boolean)">
+            <summary>
+            是否格式化
+            </summary>
+            <param name="value">默认格式化 true</param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.ProxyMethod(Meting4Net.Core.MetingProxy)">
+            <summary>
+            设置代理
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Exec(Meting4Net.Core.Models.Standard.Music_api)">
+            <summary>
+            执行，返回数据
+            </summary>
+            <param name="api"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Curl(System.String,System.String,System.Boolean)">
+            <summary>
+            发起HTTP请求
+            </summary>
+            <param name="url"></param>
+            <param name="payload"></param>
+            <param name="headerHave">返回的字符串中是否包含 响应头(Response Headers)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.PickUp(System.Object,System.String)">
+            <summary>
+            按照规则深入查询json, 例如 result.songs 则将查询json第一层的result再进入songs，抓取songs下的所有
+            </summary>
+            <param name="array"></param>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Clean(System.Object,System.String)">
+            <summary>
+            对原始json进行清理(格式化)
+            </summary>
+            <param name="raw"></param>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Search(System.String,Meting4Net.Core.Models.Standard.Options)">
+            <summary>
+            搜索歌曲
+            </summary>
+            <param name="keyword"></param>
+            <param name="options"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.SearchObj(System.String,Meting4Net.Core.Models.Standard.Options)">
+            <summary>
+            搜索歌曲
+            </summary>
+            <param name="keyword"></param>
+            <param name="options"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Song(System.String)">
+            <summary>
+            根据歌曲ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.SongObj(System.String)">
+            <summary>
+            根据歌曲ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Album(System.String)">
+            <summary>
+            根据专辑ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.AlbumObj(System.String)">
+            <summary>
+            根据专辑ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Artist(System.String,System.Int32)">
+            <summary>
+            根据作家ID获取
+            </summary>
+            <param name="id"></param>
+            <param name="limit"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.ArtistObj(System.String,System.Int32)">
+            <summary>
+            根据作家ID获取
+            </summary>
+            <param name="id"></param>
+            <param name="limit"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Playlist(System.String)">
+            <summary>
+            根据歌单ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.PlaylistObj(System.String)">
+            <summary>
+            根据歌单ID获取
+            </summary>
+            <param name="id"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Url(System.String,System.Int32)">
+            <summary>
+            根据音乐ID获取音乐链接
+            </summary>
+            <param name="id"></param>
+            <param name="br"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.UrlObj(System.String,System.Int32)">
+            <summary>
+            根据音乐ID获取音乐链接
+            </summary>
+            <param name="id"></param>
+            <param name="br"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Lyric(System.String)">
+            <summary>
+            根据歌曲ID查歌词
+            </summary>
+            <param name="id"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.LyricObj(System.String)">
+            <summary>
+            根据歌曲ID查歌词
+            </summary>
+            <param name="id"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Pic(System.String,System.Int32)">
+            <summary>
+            歌曲图片(对指定歌曲编号，返回图片地址)
+            </summary>
+            <param name="id">eg.传递通过 api.Song("35847388") 获取到的 pic_id</param>
+            <param name="size"></param>
+            <returns>返回json字符串</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.PicObj(System.String,System.Int32)">
+            <summary>
+            歌曲图片(对指定歌曲编号，返回图片地址)
+            </summary>
+            <param name="id">eg.传递通过 api.Song("35847388") 获取到的 pic_id</param>
+            <param name="size"></param>
+            <returns>返回实体对象</returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Netease_AESCBC(Meting4Net.Core.Models.Standard.Music_api)">
+            <summary>
+            网易云音乐API加密
+            </summary>
+            <param name="api"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Netease_encryptId(System.String)">
+            <summary>
+            网易云音乐歌曲ID加密
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Format_select(Newtonsoft.Json.Linq.JArray)">
+            <summary>
+            格式化选择
+            </summary>
+            <param name="rawArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Format_netease(System.Object)">
+            <summary>
+            对(单首)网易云音乐数据进行格式化
+            </summary>
+            <param name="songItem">(单首)网易云音乐json数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Format_kugou(System.Object)">
+            <summary>
+            对搜索到的(单首)酷狗音乐数据进行格式化
+            </summary>
+            <param name="songItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.CurlSet">
+            <summary>
+            设置请求头
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Netease_url(System.Object)">
+            <summary>
+            提取(解析)网易云音乐链接
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Netease_lyric(System.Object)">
+            <summary>
+            提取(解析)网易云音乐歌词
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.#ctor(System.String)">
+            <summary>
+            初始化音乐API 服务提供者
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Site(System.String)">
+            <summary>
+            设置音乐API 服务提供者 (初始化Server, Header)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Song(System.Int64)">
+            <summary>
+            根据歌曲ID获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Album(System.Int64)">
+            <summary>
+            根据专辑ID获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Artist(System.Int64,System.Int32)">
+            <summary>
+            根据作家ID获取
+            </summary>
+            <param name="id"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Playlist(System.Int64)">
+            <summary>
+            根据歌单ID获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Url(System.Int64,System.Int32)">
+            <summary>
+            根据音乐ID获取音乐链接
+            </summary>
+            <param name="id"></param>
+            <param name="br"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Lyric(System.Int64)">
+            <summary>
+            根据歌曲ID查歌词
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.Meting.Pic(System.Int64,System.Int32)">
+            <summary>
+            歌曲图片(对指定歌曲编号，返回图片地址)
+            </summary>
+            <param name="id">eg.传递通过 api.Song("35847388") 获取到的 pic_id</param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meting4Net.Core.MetingProxy.#ctor(System.Net.WebProxy)">
+            <summary>
+            WebProxy new
+            </summary>
+            <param name="webProxy"></param>
+        </member>
+        <member name="M:Meting4Net.Core.MetingProxy.#ctor(System.String,System.Int32)">
+            <summary>
+            通过主机ID和端口号new
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:Meting4Net.Core.Models.JsonModel.ToJsonStr">
+            <summary>
+            转换当前对象为 json字符串
+            注意：标记为虚方法：调用 JsonModel 对象的此方法，若此对象里装了子类，则调用子类的此方法，此时则为子类对象 的 jsonStr
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Meting4Net.Core.Models.Netease.Netease_url">
+            <summary>
+            通过 Meting.Url() 获得的原始 Netease json数据
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Meting4Net.Core.Models.Standard.SendDataType.KeyValueParm" -->
+        <member name="F:Meting4Net.Core.Models.Standard.SendDataType.Json">
+            <summary>
+            json数据: 直接发送 json字符串
+            </summary>
+        </member>
+        <member name="P:Meting4Net.Core.Models.Standard.Music_api.body">
+            <summary>
+            目前发送的数据只支持 两种类型
+            1.键值对参数: 使用 JObject 来构建 键值对
+            2.json数据: 使用 JOjbect 或 JArray 来构建 json
+            </summary>
+        </member>
+        <member name="T:Meting4Net.Core.Models.Standard.Music_search">
+            <summary>
+            通过 Meting.FormatMethod(true).Search() 获得的统一格式化后 json数据
+            </summary>
+        </member>
+        <member name="M:Meting4Net.Core.PhpCommon.Call_user_func_array(System.String[],System.Object[])">
+            <summary>
+            根据命名空间.类名 方法名 动态调用静态方法
+            </summary>
+            <param name="fullTypeNameAndMethodName">[0]命名空间.类名 [1]方法名</param>
+            <param name="parms">方法参数</param>
+            <returns>返回 指定方法的返回值</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Meting4Net.Core.PhpCommon.Http_build_query(System.Collections.Generic.Dictionary{System.String,System.Object})" -->
+    </members>
+</doc>
