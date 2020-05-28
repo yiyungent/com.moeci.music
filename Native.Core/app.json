@@ -6,7 +6,7 @@
 	"ret": 1,
 	"apiver": 9,
 	"name": "音乐包",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"version_id": 1,
 	"author": "yiyun",
 	"description": "一个支持各种音乐平台的音乐搜索器。",

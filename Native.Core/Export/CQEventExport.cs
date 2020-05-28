@@ -64,7 +64,7 @@ namespace Native.App.Export
 			// 反射获取 AppData 实例	
 			Type appDataType = typeof (AppData);	
 			// 注册一个 CQApi 实例	
-			AppInfo appInfo = new AppInfo ("com.moeci.music", 1, 9, "音乐包", "1.0.0", 1, "yiyun", "一个支持各种音乐平台的音乐搜索器。", authCode);	
+			AppInfo appInfo = new AppInfo ("com.moeci.music", 1, 9, "音乐包", "1.0.1", 1, "yiyun", "一个支持各种音乐平台的音乐搜索器。", authCode);	
 			appDataType.GetRuntimeProperty ("CQApi").GetSetMethod (true).Invoke (null, new object[] { new CQApi (appInfo) });	
 			AppData.UnityContainer.RegisterInstance<CQApi> ("com.moeci.music", AppData.CQApi);	
 			// 向容器注册一个 CQLog 实例	
